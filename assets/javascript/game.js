@@ -1,49 +1,38 @@
 
 var gamePool = ["g","o","d","f","a","t","h","e","r"];
 
-var userGuess = prompt("Guess what letter i'm thinking?");
+var gameGuess = gamePool[Math.floor(Math.random() * gamePool.length)];
 
-//var gameGuess = gamePool[Math.floor(Math.random() * gamePool.length)];
+var wins = 0, losses = 0, totalGames = 0, guessesLeft = 5, guessed = "", gameOver = "Game is Over";
 
-var wins = 0, losses = 0, totalGame = 0, guessesLeft = 5, guessed = " ", gameOver = "Game is Over";
+function clean(input) {
+    var letter = input.charAt(0);
+    letter = letter.toLowerCase();
+    return letter;
+} 
+    
+while((userGuess !== gameGuess) && (guessesLeft > 0)) {
 
-function clean(userGuess) {
-    var cleanUserGuess = userGuess.toLowerCase();
-    return cleanUserGuess;
+    var userGuess = prompt("Guess what letter i'm thinking?");
+    userGuess = clean(userGuess);
+    guessed = guessed + userGuess;
+    document.getElementById("guessed").innerHTML = guessed;
+
+    guessesLeft--;
+    document.getElementById("guess-left").innerHTML = guessesLeft;
+
 }
-clean(userGuess); 
-    
-    
-for(var i = 0; i < guessesLeft;i++) {
-        
-    var gameGuess = gamePool[i];
-    clean(userGuess);
-    alert("You guessed " + cleanUserGuess);
-    alert("This game guessed " + gameGuess);
-    guessed++;
+
+if (userGuess === gameGuess) {
+    alert("You Won!!!");
+    wins++;
+    document.getElementById("win").innerHTML = wins;
+  
+  // Add code for loser
+  } else {
+    alert("You lost :(");
+    losses++;
+    document.getElementById("loss").innerHTML = losses;
+  }
  
-    if(gameGuess.indexOf(cleanUserGuess.charAt(0)) === -1) {
-
-        newGuessesLeft = guessesLeft--;
-        totalGame++;
-        alert("You have " +newGuessesLeft+" guesses left. Try again");
-        document.getElementById("guess-left").innerHTML = newGuessesLeft;
-        // document.getElementById("guessed").innerHTML = ?;
-        if(newGuessesLeft === 0) {
-           alert("You Lost. "+gameOver);
-           totalLosses = losses++;
-           totalGame++;
-           document.getElementById("loss").innerHTML = totalLosses;
-        }else{
-           clean(userGuess);
-        }
-        
-    }else{
-        alert("you win. "+gameOver);
-        totalWins = wins++;
-        totalGame++;
-        document.getElementById("win").innerHTML = totalWins;
-    }
-
-}
     
