@@ -26,13 +26,16 @@ while((userGuess !== gameGuess) && (guessesLeft > 0)) {
 if (userGuess === gameGuess) {
     alert("You Won!!!");
     wins++;
+    losses = 0;
     document.getElementById("win").innerHTML = wins;
-  
+    document.getElementById("loss").innerHTML = losses;
   // Add code for loser
   } else {
     alert("You lost :(");
     losses++;
+    wins = 0;
     document.getElementById("loss").innerHTML = losses;
+    document.getElementById("win").innerHTML = wins;
   }
  
     
