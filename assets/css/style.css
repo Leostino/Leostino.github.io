@@ -1,15 +1,25 @@
-h1 {
-    color: blue;
+body {
+    background-image: url("../images/art-background-beautiful-988868.jpg");
+    
+    font-weight: bold;
 }
-
-#gameTitle {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 32px;
-    margin:20px 10px 10px 60px;
+.jumbotron {
+    background: #ffffff!important;
+    opacity: .67;
+    font-size: 64px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
-
-.para {
-   font-size: 20px;
-   margin-left:5px;
-   line-height: 1.6
+.card-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 20px;
+}
+.card-text1 {
+    height: 70px;
+}
+#crystals {
+    margin-left: 40px;
+}
+.win-loss {
+    text-align: center;
+    padding-top: 5px;
 }

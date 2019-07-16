@@ -1,41 +1,102 @@
+$(document).ready(function(){
 
-var gamePool = ["g","o","d","f","a","t","h","e","r"];
+ //declare the variables
 
-var gameGuess = gamePool[Math.floor(Math.random() * gamePool.length)];
+ var wins = 0, losses = 0, score = 0, totalGames = wins + losses;
 
-var wins = 0, losses = 0, totalGames = 0, guessesLeft = 5, guessed = "", gameOver = "Game is Over";
+ //update the dom
 
-function clean(input) {
-    var letter = input.charAt(0);
-    letter = letter.toLowerCase();
-    return letter;
-} 
-    
-while((userGuess !== gameGuess) && (guessesLeft > 0)) {
+ $("#win").html(wins);
+ $("#loss").html(losses);
+ $("#score").html(score);
+ $("#total-games").html(totalGames);
 
-    var userGuess = prompt("Guess what letter i'm thinking?");
-    userGuess = clean(userGuess);
-    guessed = guessed + userGuess;
-    document.getElementById("guessed").innerHTML = guessed;
+ //pick a random number and display to the player
 
-    guessesLeft--;
-    document.getElementById("guess-left").innerHTML = guessesLeft;
+ var randomNumber = Math.floor(Math.random() * 120) + 19;
 
-}
+ $("#random-num").html(randomNumber);
 
-if (userGuess === gameGuess) {
-    alert("You Won!!!");
-    wins++;
-    losses = 0;
-    document.getElementById("win").innerHTML = wins;
-    document.getElementById("loss").innerHTML = losses;
-  // Add code for loser
-  } else {
-    alert("You lost :(");
-    losses++;
-    wins = 0;
-    document.getElementById("loss").innerHTML = losses;
-    document.getElementById("win").innerHTML = wins;
-  }
- 
-    
+ //pick random numbers for each of the crystal buttons
+
+ var blueCrystal = Math.floor(Math.random() * 12) + 1;
+
+ var greenCrystal = Math.floor(Math.random() * 12) + 1;
+
+ var redCrystal = Math.floor(Math.random() * 12) + 1;
+
+ var purpleCrystal = Math.floor(Math.random() * 12) + 1;
+
+
+ // blueCrystal()
+
+ $("#blue-crystal").on("click", function(){
+    score = score + blueCrystal;
+    console.log(score);
+    $("#score").html(score);
+    gameCondition();
+ });
+
+ // greenCrystal()
+
+ $("#green-crystal").on("click", function(){
+    score = score + greenCrystal;
+    console.log(score);
+    $("#score").html(score);
+    gameCondition();
+ });
+
+ // redCrystal()
+
+ $("#red-crystal").on("click", function(){
+   score = score + redCrystal;
+   console.log(score);
+   $("#score").html(score);
+   gameCondition();
+ });
+
+ // purpleCrystal()
+
+ $("#purple-crystal").on("click", function(){
+    score = score + purpleCrystal;
+    console.log(score);
+    $("#score").html(score);
+    gameCondition();
+ });
+
+ // reset()
+
+ function reset() {
+    score = 0;
+    randomNumber = Math.floor(Math.random() * 120) + 19;
+    blueCrystal = Math.floor(Math.random() * 12) + 1;
+    greenCrystal = Math.floor(Math.random() * 12) + 1;
+    redCrystal = Math.floor(Math.random() * 12) + 1;
+    purpleCrystal = Math.floor(Math.random() * 12) + 1;
+    $("#win").html(wins);
+    $("#loss").html(losses);
+    $("#score").html(score);
+    $("#random-num").html(randomNumber);
+    $("#total-games").html(totalGames);
+   }
+
+   // gameCondition()
+
+    function gameCondition(){
+        if (score === randomNumber) {
+            wins++;
+            totalGames++;
+            $("#win").html(wins);
+            $("#total-games").html(totalGames);
+            alert("You Won :(");
+            reset();
+        }else if(score > randomNumber) {
+            losses++;
+            totalGames++;
+            $("#loss").html(losses);
+            $("#total-games").html(totalGames);
+            alert("You Lost :(");
+            reset();
+        }
+    }
+});
