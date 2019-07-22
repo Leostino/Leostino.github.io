@@ -2,97 +2,48 @@
 <html lang="en-us">
     <head>
         <meta charset="UTF-8">
-        <title>Crystal collector</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trivia Game</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/reset.css">
     </head>
     <body>
-        <div class="jumbotron d-flex justify-content-center bg-light">
-            <h1 id="jumbotron-header">Crystal Collector!</h1>
+
+        <!--container for jumbotron header-->
+
+        <div class="header jumbotron jumbotron-fluid d-flex justify-content-center align-items-center bg-light">
+            <h1><strong>Arsenal*FC TriviaGame</strong></h1>
         </div>
 
-        <!--div for the game instruction-->
+        <!--container for the game-->
         
-        <div class="container rounded">
-            <div class="row">
+        <div class="container-one">
+            <div id="game-container" class="row">
                 <div class="col-md-12">
-                    <article class="card bg-light">
-                       <h2 class="card-header">Rules:</h2>
-                       <div class="card-body">
-                            <p class="card-text">You will be given a random number at the start of the game.</p>
-                            <p class="card-text">There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
-                            <p class="card-text">You win the game by matching your total score to random number. You lose the game if your total score goes above the random number.</p>
-                            <p class="card-text">The value of each crystal is hidden from you until you click on it.</p>
-                            <p class="card-text">Each time the game starts, the game will change the values of each crystal.</p>
-                        </div>
-                    </article>
-               </div>
-            </div>
-        
-            <!--div for the game's random number, scoreboard and total score-->
-        
-        
-            <div class ="row">
-                <div class ="col-md-4">
-                    <div class="card bg-light mb-3 mt-3">
-                        <div class="card-header d-flex text-justify-center"><p class="mr-auto ml-auto mt-auto mb-auto">Random Number</p></div>
-                        <div class="card-text1 d-flex justify-content-center"><b id="random-num" class="mb-auto mt-auto"></b></div>
-                    </div>
-                    
-                </div>
-                <div class ="col-md-4">
-                    <div class="card bg-light mb-3 mt-3">
-                        <div class="card-header d-flex text-justify-center"><p class="mr-auto ml-auto mt-auto mb-auto">Your Score</p></div>
-                        <div class="card-text1 d-flex justify-content-center"><b id="score" class="mb-auto mt-auto"></b></div>
-                     </div>
-
-                </div>
-                <div class ="col-md-4">
-                    <div class="card bg-light mb-3 mt-3">
-                        <div class="card-header d-flex text-justify-center"><p class="mr-auto ml-auto mt-auto mb-auto">Results</p></div>
-                        <div class="card-text1">
-                            <p class="win-loss"><b>Wins: <span id="win"></span></b></p>
-                            <p class="win-loss"><b>Losses: </b><span id="loss"></span></p>
-                            <p class="win-loss"><b>Number of Games: </b><span id="total-games"></span></p>                       
+                    <div class="rounded" id="game">
+                      <h3>Timer: <span id="remaining-time"></span></h3>
+                      <div id="question-div" class="d-flex justify-content-center">
+                          <h2 id="question"></h2>
                         </div>
                     </div>
-
-                </div>
-            </div>
-    
-
-        <!--div for the crystals-->
-
-        
-            <div id="crystals" class ="row">
-                <div class ="col-md-3">
-                        <button type="button"><img id="blue-crystal" src="../assets/images/blue-crystal.png" alt="blue-crystal" width="150px"></button>
-                </div>
-                <div class ="col-md-3">
-                        <button type="button"><img id="green-crystal" src="../assets/images/green-crystal.png" alt="green-crystal" width="150px"></button>
-                </div>
-                <div class ="col-md-3">
-                        <button type="button"><img id="red-crystal" src="../assets/images/red-crystal.png" alt="red-crystal" width="150px"></button>
-                </div>
-                <div class ="col-md-3">
-                        <button type="button"><img id="purple-crystal" src="../assets/images/purple-crystal.png" alt="purple-crystal" width="150px"></button>
                 
-               </div>
+                </div>
             </div>
         </div>
-       
-    
-    
-    
-    
-    
-    
-    
-    
+        
+        <!--container for the start button-->
+        
+        <div class="container">
+            <div class="row">
+                <div id="button-div" class="col-md-12 d-flex justify-content-center align-items-center">
+                    <button id="start" type="button" class="btn btn-danger btn-lg">START GAME</button>
+                </div>
+            </div>
+        </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/javascript/game.js"></script>   
+    <script src="assets/javascript/app.js"></script>   
     </body>
 </html>
