@@ -1,0 +1,43 @@
+[
+   {
+        "id": 1,
+        "name": "Darunia",
+        "image": "/clickyImages/Darunia.png",
+        "clicked": false
+    },{
+        "id": 2,
+        "name": "Ganondorf",
+        "image": "/clickyImages/ganondorf.png",
+        "clicked": false
+    },{
+        "id": 3,
+        "name": "Impa",
+        "image": "/clickyImages/impa.png",
+        "clicked": false
+    },{
+        "id": 4,
+        "name": "Link",
+        "image": "/clickyImages/link.png",
+        "clicked": false
+    },{
+        "id": 5,
+        "name": "Nabooru",
+        "image": "/clickyImages/nabooru.png",
+        "clicked": false
+    },{
+        "id": 6,
+        "name": "Ruto",
+        "image": "/clickyImages/ruto.png",
+        "clicked": false
+    },{
+        "id": 7,
+        "name": "Sheik",
+        "image": "/clickyImages/sheik.png",
+        "clicked": false
+    },{
+        "id": 8,
+        "name": "Zelda",
+        "image": "/clickyImages/zelda.png",
+        "clicked": false
+    }
+]
